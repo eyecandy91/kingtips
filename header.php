@@ -26,10 +26,7 @@ $google      = myprefix_get_theme_option('ga');
             onload="this.onload=null;this.rel='stylesheet'">
         <noscript>
             <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>"></noscript>
-        <link rel="preload" href="<?php echo get_template_directory_uri() ?>/css/font.css" as="style"
-            onload="this.onload=null;this.rel='stylesheet'">
-        <noscript>
-            <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/font.css"></noscript>
+        
         <?php if (isset($google)) { ?>
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $google ?>"></script>
         <script>

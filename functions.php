@@ -424,16 +424,16 @@ function remove_menu ()
 } 
 add_action('admin_menu', 'remove_menu');
 
-/**
- * Add subscribers to post authors
- */
-add_filter( 'wp_dropdown_users_args', 'add_subscribers_to_dropdown', 10, 2 );
-function add_subscribers_to_dropdown( $query_args, $r ) {
+// /**
+//  * Add subscribers to post authors
+//  */
+// add_filter( 'wp_dropdown_users_args', 'add_subscribers_to_dropdown', 10, 2 );
+// function add_subscribers_to_dropdown( $query_args, $r ) {
 
-    $query_args['who'] = '';
-    return $query_args;
+//     $query_args['who'] = '';
+//     return $query_args;
 
-}
+// }
 
 
 /**
@@ -864,17 +864,17 @@ function custom_post()
 
 	// Set UI labels for Custom Post Type
 	$labels = array(
-		'name'                => _x('Custom post type', 'Post Type General Name', 'ez'),
-		'singular_name'       => _x('Custom post type', 'Post Type Singular Name', 'ez'),
-		'menu_name'           => __('Custom post type', 'ez'),
-		'parent_item_colon'   => __('Parent Custom post type', 'ez'),
-		'all_items'           => __('All Custom post type', 'ez'),
-		'view_item'           => __('View Custom post type', 'ez'),
-		'add_new_item'        => __('Add New Custom post type', 'ez'),
-		'add_new'             => __('Add New Custom post type', 'ez'),
-		'edit_item'           => __('Edit Custom post type', 'ez'),
-		'update_item'         => __('Update Custom post type', 'ez'),
-		'search_items'        => __('Search Custom post type', 'ez'),
+		'name'                => _x('Bets', 'Post Type General Name', 'ez'),
+		'singular_name'       => _x('Bets', 'Post Type Singular Name', 'ez'),
+		'menu_name'           => __('Bets', 'ez'),
+		'parent_item_colon'   => __('Parent Bets', 'ez'),
+		'all_items'           => __('All Bets', 'ez'),
+		'view_item'           => __('View Bets', 'ez'),
+		'add_new_item'        => __('Add New Bets', 'ez'),
+		'add_new'             => __('Add New Bets', 'ez'),
+		'edit_item'           => __('Edit Bets', 'ez'),
+		'update_item'         => __('Update Bets', 'ez'),
+		'search_items'        => __('Search Bets', 'ez'),
 		'not_found'           => __('Not Found', 'ez'),
 		'not_found_in_trash'  => __('Not found in Trash', 'ez'),
 	);
@@ -882,13 +882,13 @@ function custom_post()
 	// Set other options for Custom Post Type
 
 	$args = array(
-		'label'               => __('Custom post type', 'ez'),
-		'description'         => __('Custom post type', 'ez'),
+		'label'               => __('Bets', 'ez'),
+		'description'         => __('Bets', 'ez'),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
 		'supports'            => array('title', 'author'),
 		// You can associate this CPT with a taxonomy or custom taxonomy.
-		'taxonomies'          => array('custom taxtonomy'),
+		'taxonomies'          => array('Bets'),
 		/* A hierarchical CPT is like Pages and can have
 			* Parent and child items. A non-hierarchical CPT
 			* is like Posts.
@@ -910,7 +910,7 @@ function custom_post()
 	);
 
 	// Registering your Custom Post Type
-	register_post_type('custom-post', $args); // change to match that of the real name 
+	register_post_type('betting', $args); // change to match that of the real name 
 }
 
 /* Hook into the 'init' action so that the function
@@ -932,28 +932,28 @@ function custom_taxonomy()
 	//first do the translations part for GUI
 
 	$labels = array(
-		'name' => _x('custom taxtonomy', 'taxonomy general name'),
-		'singular_name' => _x('custom taxtonomy', 'taxonomy singular name'),
-		'search_items' =>  __('Search custom taxtonomy'),
-		'all_items' => __('All custom taxtonomy'),
-		'parent_item' => __('Parent custom taxtonomy'),
-		'parent_item_colon' => __('Parent custom taxtonomy:'),
-		'edit_item' => __('Edit custom taxtonomy'),
-		'update_item' => __('Update custom taxtonomy'),
-		'add_new_item' => __('Add New custom taxtonomy'),
-		'new_item_name' => __('New custom taxtonomy Name'),
-		'menu_name' => __('custom taxtonomy'),
+		'name' => _x('Betting categories', 'taxonomy general name'),
+		'singular_name' => _x('Betting categories', 'taxonomy singular name'),
+		'search_items' =>  __('Search Betting categories'),
+		'all_items' => __('All Betting categories'),
+		'parent_item' => __('Parent Betting categories'),
+		'parent_item_colon' => __('Parent betting categories:'),
+		'edit_item' => __('Edit Betting categories'),
+		'update_item' => __('Update Betting categories'),
+		'add_new_item' => __('Add New Betting categories'),
+		'new_item_name' => __('New Betting categories Name'),
+		'menu_name' => __(' Betting categories'),
 	);
 
 	// Now register the taxonomy
 
-	register_taxonomy('custom-tax', array('custom-post'), array( // change to match that of the real name 
+	register_taxonomy('custom-bets', array('betting'), array( // change to match that of the real name 
 		'hierarchical' => true,
 		'labels' => $labels,
 		'show_ui' => true,
 		'show_admin_column' => true,
 		'query_var' => true,
-		'rewrite' => array('slug' => 'custom-tax'),
+		'rewrite' => array('slug' => 'custom-bets'),
 		'show_in_rest' => true
 	));
 }
@@ -997,40 +997,6 @@ function hide_update_notice_to_all_but_admin() {
 }
 add_action( 'admin_head', 'hide_update_notice_to_all_but_admin', 1 );
 
-
-/**
- * Remove all dashboard widgets
- */
-function remove_dashboard_widgets() {
-    global $wp_meta_boxes;
-    
-    unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
-    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
-    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
-    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
-    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts'] );
-    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
-    unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
-    unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
-
-    remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
-}
-add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
-
-/**
- * Example new widget
- */
-function my_custom_dashboard_widgets() {
-	global $wp_meta_boxes;
-	
-	wp_add_dashboard_widget('custom_help_widget', 'Theme Support', 'custom_dashboard_help');
-}
-add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
- 
-function custom_dashboard_help() {
-echo '<p>Welcome to Custom Blog Theme! Need help? Contact the developer <a href="mailto:yourusername@gmail.com">here</a>. For WordPress Tutorials visit: <a href="https://www.wpbeginner.com" target="_blank">WPBeginner</a></p>';
-}
-
 /**
  * Modify admin footer text
  */
@@ -1039,33 +1005,1225 @@ function modify_footer() {
 }
 add_filter( 'admin_footer_text', 'modify_footer' );
 
-/**
- * Add recent posts and edit link to dashboard ---- currently a test
- */
-function wps_recent_posts_dw() {
-	?>
-	<ul>
-<?php $the_query = new WP_Query( 'posts_per_page=5' ); ?>
- 
-<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
- 
-<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a> <?php  edit_post_link(__('Edit')); ?></li>
- 
-<?php 
-endwhile;
-wp_reset_postdata();
-?>
-</ul>
-<?php
+/*****************************************************************************
+What sport
+*****************************************************************************/
+function what_sport() { 
+		
+	//Euro competitions
+	$sport = get_field('pick_your_sport');
+
+	if ($sport == 'Football') { ?>
+			<img src="<?php echo get_template_directory_uri(); ?>/competition/football.png" width="30px" height="auto" alt="">
+        <?php
+	} else if ($sport == 'Hockey') { ?>
+			<img src="<?php echo get_template_directory_uri(); ?>/competition/hockey.png" width="30px" height="auto" alt="">
+        <?php
+	} else if ($sport == 'Basketball') { ?>
+			<img src="<?php echo get_template_directory_uri(); ?>/competition/basketball.png" width="30px" height="auto" alt="">
+        <?php
+	} else if ($sport == 'American football') { ?>
+			<img src="<?php echo get_template_directory_uri(); ?>/competition/nfl.png" width="30px" height="auto" alt="">
+        <?php
+	} else if ($sport == 'Baseball') { ?>
+			<img src="<?php echo get_template_directory_uri(); ?>/competition/baseball.png" width="30px" height="auto" alt="">
+        <?php
+	} else if ($sport == 'Esports') { ?>
+		<img src="<?php echo get_template_directory_uri(); ?>/competition/esports.png" width="30px" height="auto" alt="">
+		<?php
+	}
 	
-	}
-	 
-	function add_wps_recent_posts_dw() {
-		   wp_add_dashboard_widget( 'wps_recent_posts_dw', __( 'Recent Posts' ), 'wps_recent_posts_dw' );
-	}
-	add_action('wp_dashboard_setup', 'add_wps_recent_posts_dw' );
+}
+add_action( 'wpmu_before_content', 'what_sport' );
+
+/*****************************************************************************
+A full betslip
+*****************************************************************************/
+function complete_bet( $teams ) {
+
+	// echo "<div class='level-left'>";
+	
+		// echo "<div class='level-item'>";
+			
+			// Loop through team(s) Logos
+			if (count($teams) != 2) {
+				
+					foreach ($teams as $team) { ?>
+						<div class="is-not-domestic">
+							<img src="<?php echo get_template_directory_uri(); ?>/team-badge/<?php echo $team ?>.png" width="30px" height="auto" alt="">
+						</div>
+					<?php };
+					
+					//Loop through the team(s) names
+					foreach ($teams as $team) {
+						echo "<div class='is-not-domestic truncate'>";
+						echo $team;
+						echo "</div>";
+					};
+					// echo "<div>VS</div>";
+			} else { ?>
+				<div class="reorder has-text-right truncate">
+				<?php echo $teams[0];?>
+				</div>
+				<div class="reorder">
+				<img src="<?php echo get_template_directory_uri(); ?>/team-badge/<?php echo $teams[0]; ?>.png" width="30px" height="auto" alt="">
+				</div>
+				<!-- <div>VS</div> -->
+				<div class="reorder">
+				<img src="<?php echo get_template_directory_uri(); ?>/team-badge/<?php echo $teams[1]; ?>.png" width="30px" height="auto" alt="">
+				</div>
+				<div class="reorder has-text-left truncate">
+				<?php echo $teams[1];?>
+				</div>
+				<?php
+			};
+			
+		// echo "</div>";
+
+	// echo "</div>";
 
 
- /**
- * remove 
- */
+	// print_r($team);
+	
+}
+add_action( 'kingtips_content', 'complete_bet' );
+
+
+/*----------------- start of esports ----------------------------------
+
+
+/*****************************************************************************
+Esports teams
+*****************************************************************************/
+function eteams() {
+	$home = get_field('e_team_1');
+	$away = get_field('e_team_2');
+?>
+
+	<div class="reorder has-text-right truncate">
+	<?php echo $home;?>
+	</div>
+	<div class="reorder">
+	<img src="<?php echo get_template_directory_uri(); ?>/team-badge/default.png" width="30px" height="auto" alt="">
+	</div>
+	<div class="reorder">
+	<img src="<?php echo get_template_directory_uri(); ?>/team-badge/default.png" width="30px" height="auto" alt="">
+	</div>
+	<div class="reorder has-text-left truncate">
+	<?php echo $away;?>
+	</div>
+	<?php
+
+}
+add_action( 'kingtips_content', 'eteams' );
+
+/*****************************************************************************
+Esports information
+*****************************************************************************/
+function esports_info() {
+
+	//Euro competitions
+    $game = get_field('esports');
+	// $round = get_field('competition_round');
+	$time = get_field('game_time'); ?>
+
+	<div class="level-item">
+		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $game ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $game; ?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time; ?>
+			</div>
+		</div>
+	</div><?php
+
+}
+add_action( 'kingtips_content', 'esports_info' );
+
+
+/*----------------- start of football teams ----------------------------------
+
+
+/*****************************************************************************
+European information
+*****************************************************************************/
+function euro_info() { 
+		
+	//Euro competitions
+    $europe = get_field('european');
+	$round = get_field('competition_round');
+	$time = get_field('game_time');
+
+	if ($europe !== 'Not a European fixture') { ?>
+	<div class="level-item">
+		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $europe ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $europe; ?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time; ?>
+			</div>
+		</div>
+	</div><?php
+	}
+
+}
+add_action( 'wpmu_before_content', 'euro_info' );
+
+/*****************************************************************************
+English League information
+*****************************************************************************/
+function eng_league_info() { 
+		
+	//competitions
+	$eng_comps = get_field('eng_comp');
+	$round = get_field('competition_round');
+	$time = get_field('game_time');
+
+	?>
+	<div class="level-item">
+		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $eng_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $eng_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time; ?>
+			</div>
+		</div>
+	</div><?php
+
+}
+add_action( 'wpmu_before_content', 'eng_league_info' );
+
+/*****************************************************************************
+Belguim League information
+*****************************************************************************/
+function bel_league_info() { 
+		
+	//competitions
+	$bel_comps = get_field('bel_comp');
+	$round = get_field('competition_round');
+	$time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $bel_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $bel_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time; ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'bel_league_info' );
+
+/*****************************************************************************
+Turkish League information
+*****************************************************************************/
+function turk_league_info() { 
+		
+	//competitions
+	$turk_comps = get_field('turk_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $turk_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $turk_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'turk_league_info' );
+
+/*****************************************************************************
+Russian League information
+*****************************************************************************/
+function rus_league_info() { 
+		
+	//competitions
+	$rus_comps = get_field('rus_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $rus_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $rus_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'rus_league_info' );
+
+/*****************************************************************************
+Swiss League information
+*****************************************************************************/
+function swss_league_info() { 
+		
+	//competitions
+	$swss_comps = get_field('swss_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $swss_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $swss_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'swss_league_info' );
+
+/*****************************************************************************
+Argentina League information
+*****************************************************************************/
+function arg_league_info() { 
+		
+	//competitions
+	$arg_comps = get_field('arg_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $arg_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $arg_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'arg_league_info' );
+
+/*****************************************************************************
+Spain League information
+*****************************************************************************/
+function spa_league_info() { 
+		
+	//competitions
+	$spa_comps = get_field('spa_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $spa_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $spa_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'spa_league_info' );
+
+/*****************************************************************************
+Brazil League information
+*****************************************************************************/
+function bra_league_info() { 
+		
+	//competitions
+	$bra_comps = get_field('bra_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $bra_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $bra_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'bra_league_info' );
+
+/*****************************************************************************
+Netherlands League information
+*****************************************************************************/
+function ned_league_info() { 
+		
+	//competitions
+	$ned_comps = get_field('ned_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $ned_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $ned_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'ned_league_info' );
+
+/*****************************************************************************
+German League information
+*****************************************************************************/
+function ger_league_info() { 
+		
+	//competitions
+	$ger_comps = get_field('ger_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $ger_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $ger_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'ger_league_info' );
+
+/*****************************************************************************
+Danish League information
+*****************************************************************************/
+function dan_league_info() { 
+		
+	//competitions
+	$dan_comps = get_field('dan_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $dan_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $dan_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'dan_league_info' );
+
+/*****************************************************************************
+America League information
+*****************************************************************************/
+function amr_league_info() { 
+		
+	//competitions
+	$amr_comps = get_field('amr_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $amr_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $amr_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'amr_league_info' );
+
+/*****************************************************************************
+Mexico League information
+*****************************************************************************/
+function mex_league_info() { 
+		
+	//competitions
+	$mex_comps = get_field('mex_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $mex_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $mex_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'mex_league_info' );
+
+/*****************************************************************************
+Scottish League information
+*****************************************************************************/
+function scot_league_info() { 
+		
+	//competitions
+	$scot_comps = get_field('scot_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $scot_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $scot_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'scot_league_info' );
+
+/*****************************************************************************
+Austrian League information
+*****************************************************************************/
+function aus_league_info() { 
+		
+	//competitions
+	$aus_comps = get_field('aus_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $aus_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $aus_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'aus_league_info' );
+
+/*****************************************************************************
+China League information
+*****************************************************************************/
+function chi_league_info() { 
+		
+	//competitions
+	$chi_comps = get_field('chi_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $chi_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $chi_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'chi_league_info' );
+
+/*****************************************************************************
+Japan League information
+*****************************************************************************/
+function jap_league_info() { 
+		
+	//competitions
+	$jap_comps = get_field('jap_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $jap_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $jap_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'jap_league_info' );
+
+/*****************************************************************************
+Sweden League information
+*****************************************************************************/
+function swe_league_info() { 
+		
+	//competitions
+	$swe_comps = get_field('swe_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $swe_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $swe_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'swe_league_info' );
+
+/*****************************************************************************
+Portugal League information
+*****************************************************************************/
+function port_league_info() { 
+		
+	//competitions
+	$port_comps = get_field('port_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $port_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $port_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'port_league_info' );
+
+/*****************************************************************************
+Greece League information
+*****************************************************************************/
+function gre_league_info() { 
+		
+	//competitions
+	$gre_comps = get_field('gre_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $gre_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $gre_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'gre_league_info' );
+
+/*****************************************************************************
+Italy League information
+*****************************************************************************/
+function ita_league_info() { 
+		
+	//competitions
+	$ita_comps = get_field('ita_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $ita_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $ita_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'ita_league_info' );
+
+/*****************************************************************************
+France League information
+*****************************************************************************/
+function fra_league_info() { 
+		
+	//competitions
+	$fra_comps = get_field('fra_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $fra_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $fra_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'fra_league_info' );
+
+
+/*----------------- start of hockey teams ----------------------------------
+
+
+/*****************************************************************************
+NHL information
+*****************************************************************************/
+function nhl_league_info() { 
+		
+	//competitions
+	$nhl_comps = get_field('nhl_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+
+	<div class="level-item">
+		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $nhl_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $nhl_comps; ?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time; ?>
+			</div>
+		</div>
+	</div><?php
+
+}
+add_action( 'wpmu_before_content', 'nhl_league_info' );
+
+/*****************************************************************************
+KHL information
+*****************************************************************************/
+function khl_league_info() { 
+		
+	//competitions
+	$khl_comps = get_field('khl_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $khl_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $khl_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+	
+}
+add_action( 'wpmu_before_content', 'khl_league_info' );
+
+/*****************************************************************************
+Eishockey information
+*****************************************************************************/
+function Eishockey_league_info() { 
+		
+	//competitions
+	$Eishockey_comps = get_field('Eishockey_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $Eishockey_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $Eishockey_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+	
+}
+add_action( 'wpmu_before_content', 'Eishockey_league_info' );
+
+/*****************************************************************************
+Eishockey 2 information
+*****************************************************************************/
+function Eishockey2_league_info() { 
+		
+	//competitions
+	$Eishockey2_comps = get_field('Eishockey2_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $Eishockey2_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $Eishockey2_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+	
+}
+add_action( 'wpmu_before_content', 'Eishockey2_league_info' );
+
+
+/*----------------- start of basketabll teams ----------------------------------
+
+
+/*****************************************************************************
+NBA information
+*****************************************************************************/
+function nba_league_info() { 
+		
+	//competitions
+	$nba_comps = get_field('nba_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $nba_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $nba_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'nba_league_info' );
+
+/*****************************************************************************
+World cup information
+*****************************************************************************/
+function basketball_wc_league_info() { 
+
+	//competitions
+	$basketball_wc_comps = get_field('basketball_wc_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $basketball_wc_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $basketball_wc_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'basketball_wc_league_info' );
+
+
+/*----------------- start of nfl teams ----------------------------------
+
+
+/*****************************************************************************
+NFL information
+*****************************************************************************/
+function nfl_league_info() { 
+		
+	//competitions
+	$nfl_comps = get_field('nfl_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $nfl_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $nfl_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'nfl_league_info' );
+
+
+/*----------------- start of mlb teams ----------------------------------
+
+
+/*****************************************************************************
+MLB information
+*****************************************************************************/
+function mlb_league_info() { 
+		
+	//competitions
+	$mlb_comps = get_field('mlb_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $mlb_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $mlb_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'mlb_league_info' );
+
+
+/*----------------- start league information ----------------------------------
+
+
+/*****************************************************************************
+League information
+*****************************************************************************/
+function extra_league_info() { 
+
+	//what sport
+    $sport = get_field('pick_your_sport');
+
+//Basketball comps
+    $basketball_league = get_field('basketball');
+    $nba = get_field('nba');
+    $basketball_wc = get_field('basketball_wc');
+
+//American football
+    $nfl = get_field('nfl');
+
+//Baseball
+    $mlb = get_field('mlb');
+
+//hockey comps
+    $hockey_league = get_field('hockey');
+    $nhl = get_field('nhl');
+    $khl = get_field('khl');
+    $Eishockey = get_field('Eishockey');
+    $Eishockey2 = get_field('Eishockey2');
+
+// Football teams
+    $country = get_field('football');
+    $eng = get_field('eng');
+    $aus = get_field('aus');
+    $bra = get_field('bra');
+    $can = get_field('can');
+    $bel = get_field('bel');
+    $arg = get_field('arg');
+    $chi = get_field('chi');
+    $ger = get_field('ger');
+    $ned = get_field('ned');
+    $gre = get_field('gre');
+    $jap = get_field('jap');
+    $sco = get_field('scot');
+    $rus = get_field('rus');
+    $port = get_field('port');
+    $swed = get_field('swed');
+    $swss = get_field('swss');
+    $ita = get_field('ita');
+    $turk = get_field('turk');
+    $amr = get_field('amr');
+    $mex = get_field('mex');
+    $dan = get_field('dan');
+    $spa = get_field('spa');
+    $fra = get_field('fra');
+	
+	echo "<div class='level-item'>";
+	what_sport();
+	//only load this if footballis selected
+	if ($sport == 'Football') {
+		//Is this a european match
+		if (euro_info()) {
+			euro_info();
+		} 
+		if ($country && in_array('England', $country)) {
+			if (count($eng) === 2) {
+				eng_league_info();
+			};
+		};
+		if ($country && in_array('Austrian', $country)) {
+			if (count($aus) === 2) {
+				aus_league_info();
+			};
+		};
+		if ($country && in_array('Brazil', $country)) {
+			if (count($bra) === 2) {
+				bra_league_info();
+			};
+		};
+		// if (count($can) === 2) {
+		//     can_league_info();
+		// };
+		if ($country && in_array('Belgium', $country)) {
+			if (count($bel) === 2) {
+				bel_league_info();
+			};
+		};
+		if ($country && in_array('Argentina', $country)) {
+			if (count($arg) === 2) {
+				arg_league_info();
+			};
+		};
+		if ($country && in_array('China', $country)) {
+			if (count($chi) === 2) {
+				chi_league_info();
+			};
+		};
+		if ($country && in_array('Germany', $country)) {
+			if (count($ger) === 2) {
+				ger_league_info();
+			};
+		};
+		if ($country && in_array('Holland', $country)) {
+			if (count($ned) === 2) {
+				ned_league_info();
+			};
+		};
+		if ($country && in_array('Greece', $country)) {
+			if (count($gre) === 2) {
+				gre_league_info();
+			};
+		};
+		if ($country && in_array('Japan', $country)) {
+			if (count($jap) === 2) {
+				jap_league_info();
+			};
+		};
+		if ($country && in_array('Scotland', $country)) {
+			if (count($scot) === 2) {
+				scot_league_info();
+			};
+		};
+		if ($country && in_array('Russia', $country)) {
+			if (count($rus) === 2) {
+				rus_league_info();
+			};
+		};
+		if ($country && in_array('Portugal', $country)) {
+			if (count($port) === 2) {
+				port_league_info();
+			};
+		};
+		if ($country && in_array('Sweden', $country)) {
+			if (count($swed) === 2) {
+				swed_league_info();
+			};
+		};
+		if ($country && in_array('Swiss', $country)) {
+			if (count($swss) === 2) {
+				swss_league_info();
+			};
+		};
+		if ($country && in_array('Italy', $country)) {
+			if (count($ita) === 2) {
+				ita_league_info();
+			};
+		};
+		if ($country && in_array('Turkish', $country)) {
+			if (count($turk) === 2) {
+				turk_league_info();
+			};
+		};
+		if ($country && in_array('America', $country)) {
+			if (count($amr) === 2) {
+				amr_league_info();
+			};
+		};
+		if ($country && in_array('Mexico', $country)) {
+			if (count($mex) === 2) {
+				mex_league_info();
+			};
+		};
+		if ($country && in_array('Danish', $country)) {
+			if (count($dan) === 2) {
+				dan_league_info();
+			};
+		};
+		if ($country && in_array('Spain', $country)) {
+			if (count($spa) === 2) {
+				spa_league_info();
+			};
+		};
+		if ($country && in_array('France', $country)) {
+			if (count($fra) === 2) {
+				fra_league_info();
+			};
+		};
+	} else if ($sport == 'Hockey') { 
+		if ($hockey_league && in_array('NHL', $hockey_league)) {
+			if (count($nhl) === 2) {
+				nhl_league_info();
+			};
+		};
+		if ($hockey_league && in_array('KHL', $hockey_league)) {
+			if (count($khl) === 2) {
+				khl_league_info();
+			};
+		};
+		if ($hockey_league && in_array('Deutsche Eishockey Liga', $hockey_league)) {
+			if (count($Eishockey) === 2) {
+				Eishockey_league_info();
+			};
+		};
+		if ($hockey_league && in_array('Deutsche Eishockey Liga 2nd Division', $hockey_league)) {
+			if (count($Eishockey2) === 2) {
+				Eishockey2_league_info();
+			};
+		};
+	} else if ($sport == 'Basketball') {
+		if ($basketball_league && in_array('NBA', $basketball_league)) {
+			if (count($nba) === 2) {
+				nba_league_info();
+			};
+		};
+		if ($basketball_league && in_array('World cup', $basketball_league)) {
+			if (count($basketball_wc) === 2) {
+				basketball_wc_league_info();
+			};
+		};
+	} else if ($sport == 'American football') {
+		if ($sport == 'American football') {
+			if (count($nfl) === 2) {
+				nfl_league_info();
+			};
+		};
+	} else if ($sport == 'Baseball') {
+		if ($sport == 'Baseball') {
+			if (count($mlb) === 2) {
+				mlb_league_info();
+			}
+		};
+	} else if ($sport == 'Esports') {
+		esports_info();
+	}
+	echo "</div>";
+
+}
+add_action( 'wpmu_before_content', 'extra_league_info' );
+

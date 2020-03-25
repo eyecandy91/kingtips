@@ -10,7 +10,7 @@ const purgecss = require("gulp-purgecss");
 
 gulp.task("browserSync", function() {
   browserSync.init({
-    proxy: "http://localhost/ez-template"
+    proxy: "http://localhost/kingtips"
   });
 });
 
