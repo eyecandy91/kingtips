@@ -9,29 +9,26 @@
  * @package _s
  */
 
-?>
-	</section>
+$footer          = get_field('footer', 101);
 
-	</div><!-- .container -->
-
-	<footer id="colophon" class="site-footer">
-	<div class="has-text-centered">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', '_s' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="https://automattic.com/">Automattics</a>' );
-				?>
+ 	if ($footer) { ?>
+	<footer class="footer content has-text-white">
+		<div class="has-text-centered">
+			<?php echo $footer ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+	<?php } ?>
+
+	</section>
+	</div><!-- .container -->
 </div><!-- .site -->
 
-<?php wp_footer(); ?>
+<?php wp_footer(); 
+
+echo "<pre>";
+print_r($footer);
+echo "</pre>";
+?>
 
 </body>
 </html>

@@ -9,42 +9,6 @@
 
 get_header();
 
-?>
-
-<style>
-.rate-1 {
-  width: 10%
-} 
-.rate-2 {
-  width: 20%
-} 
-.rate-3 {
-  width: 30%
-} 
-.rate-4 {
-  width: 40%
-} 
-.rate-5 {
-  width: 50%
-} 
-.rate-6 {
-  width: 60%
-} 
-.rate-7 {
-  width: 70%
-} 
-.rate-8 {
-  width: 80%
-} 
-.rate-9 {
-  width: 90%
-} 
-.rate-10 {
-  width: 100%
-} 
-</style>
-
-<?php
 $loop = new WP_Query(array(
     'post_type' => 'betting',
     'posts_per_page' => -1,
@@ -59,7 +23,6 @@ $loop = new WP_Query(array(
 
 )
 );
-echo "<div class='phablet'>";
  while ($loop->have_posts()): $loop->the_post();
 
 //what sport
@@ -140,16 +103,6 @@ echo "<div class='phablet'>";
         <div class='column is-3-desktop is-8-tablet is-full-mobile teams'>
             <?php //Show the game time ?>
             <div class="level is-relative">
-                <!-- <div class='level-left'>
-                    <div class='level-item is-block is-uppercase'>
-                        <div class="is-block has-text-weight-bold">
-                            game time
-                        </div>
-                        <div class="has-text-grey">
-                            <?php //echo $time;?>
-                        </div>
-                    </div>
-                </div> -->
                 
                 <div class="level-item team-badges is-flex">
                 <?php if ($sport == 'Football') {
@@ -287,12 +240,7 @@ echo "<div class='phablet'>";
 
                 } ?>
 
-                    <div style="
-                        /* position: absolute; */
-                        /* left: 72px; */
-                        font-weight: bold;
-                        color: #00d1b2;
-                    ">
+                    <div class="has-text-primary has-text-weight-bold">
                         vs
                     </div>
                 </div>
@@ -306,27 +254,26 @@ echo "<div class='phablet'>";
                     <div class="level tip">
                         <div class='level-left'>
                             <div class='level-item is-block'>
-                            <div class="is-block is-uppercase has-text-weight-bold">
-                                <?php echo $tip_text;?>
-                            </div>
-                            <div class="is-block has-text-grey">
-                                <?php if ($updpown == 'Under') { ?>
-                                    <i class="has-text-danger fas fa-chevron-down"></i>
-                                <?php } else if ($updpown == 'Over') { ?>
-                                    <i class="has-text-primary fas fa-chevron-up"></i>
-                                <?php };
-                                echo $tip; ?>
-                                <?php if ($goals) {
-                                    echo "goals";
-                                } ?>
-                            </div>
+                                <div class="is-block is-uppercase has-text-weight-bold">
+                                    <?php echo $tip_text;?>
+                                 </div>
+                                <div class="is-block has-text-grey">
+                                    <?php if ($updpown == 'Under') { ?>
+                                        <i class="has-text-danger fas fa-chevron-down"></i>
+                                    <?php } else if ($updpown == 'Over') { ?>
+                                        <i class="has-text-primary fas fa-chevron-up"></i>
+                                    <?php };
+                                    echo $tip; ?>
+                                    <?php //if ($goals) {
+                                        //echo "goals";
+                                    //} ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class='column is-half'>
                         <div class="level rating">
-                            <!-- <div class='level-right'> -->
                             <div class='level-item is-block-touch'>
                                 <?php //Add a bar for bet game rating ?>
                                 <div class="skill has-text-right-mobile">
@@ -338,7 +285,7 @@ echo "<div class='phablet'>";
                                             <?php echo $rating; ?>/10
                                         </div>
                                         <div class="rating-bar">
-                                            <div class="rate-<?php echo $rating; ?>">
+                                            <div class="rate-<?php echo $rating; ?>" style="width: <?php echo $rating; ?>0%">
                                             <span class="animate blue"></span>
                                             </div>
                                         </div>
@@ -346,7 +293,6 @@ echo "<div class='phablet'>";
                                 </div>
                             </div>
                         </div>
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -355,7 +301,7 @@ echo "<div class='phablet'>";
             <? //Add the bookies ?>
             <div class="level">
                 <div class='level-left is-flex-mobile'>
-                    <div class="level-item is-marginless bookies">
+                    <div class="level-left is-marginless bookies">
                         <img class="spacer--right" src="<?php echo get_template_directory_uri(); ?>/betting/<?php echo $bookies?>.png" width="45px" height="auto" alt="">
                         <div class="is-block is-uppercase has-text-weight-bold">
                             <?php echo $bet_text; ?>
@@ -366,8 +312,6 @@ echo "<div class='phablet'>";
                     </div>
                     <a class='is-uppercase has-text-weight-bold button--bookie has-text-white' href="<?php echo $url; ?>" target="_blank"><?php echo $btn; ?></a>
                 </div>
-                <!-- <div class=""> -->
-                <!-- </div> -->
             </div>
         </div>
 
@@ -376,12 +320,7 @@ echo "<div class='phablet'>";
 </div>
 <?php
 
-
-// $fields = get_field_objects();
-// echo '<pre>';
-// print_r($esports);
-// echo '</pre>';
 endwhile;
 wp_reset_query();
-echo "</div>";
+
 get_footer();

@@ -1107,13 +1107,8 @@ a.tag:hover {
     display: flex;
 }
 
-.level.is-mobile .level-left,
-    .level.is-mobile .level-right {
+.level.is-mobile .level-left {
     display: flex;
-}
-
-.level.is-mobile .level-left + .level-right {
-    margin-top: 0;
 }
 
 .level.is-mobile .level-item:not(:last-child) {
@@ -1154,16 +1149,14 @@ a.tag:hover {
     }
 }
 
-.level-left,
-.level-right {
+.level-left {
     flex-basis: auto;
     flex-grow: 0;
     flex-shrink: 0;
 }
 
 @media screen and (min-width: 769px), print {
-    .level-left .level-item:not(:last-child),
-    .level-right .level-item:not(:last-child) {
+    .level-left .level-item:not(:last-child) {
         margin-right: 0.75rem;
     }
 }
@@ -1173,25 +1166,8 @@ a.tag:hover {
     justify-content: flex-start;
 }
 
-@media screen and (max-width: 768px) {
-    .level-left + .level-right {
-        margin-top: 1.5rem;
-    }
-}
-
 @media screen and (min-width: 769px), print {
     .level-left {
-        display: flex;
-    }
-}
-
-.level-right {
-    align-items: center;
-    justify-content: flex-end;
-}
-
-@media screen and (min-width: 769px), print {
-    .level-right {
         display: flex;
     }
 }
@@ -2066,45 +2042,6 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 /* .rate-n, n being the rating from 1 to 10 */
-.rate-1 {
-    width: 10%;
-}
-
-.rate-2 {
-    width: 20%;
-}
-
-.rate-3 {
-    width: 30%;
-}
-
-.rate-4 {
-    width: 40%;
-}
-
-.rate-5 {
-    width: 50%;
-}
-
-.rate-6 {
-    width: 60%;
-}
-
-.rate-7 {
-    width: 70%;
-}
-
-.rate-8 {
-    width: 80%;
-}
-
-.rate-9 {
-    width: 90%;
-}
-
-.rate-10 {
-    width: 100%;
-}
 
 /* CSS3 Animation */
 .animate {
@@ -2324,6 +2261,5 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 .footer {
-    background-color: #fafafa;
     padding: 3rem 1.5rem 6rem;
 }
