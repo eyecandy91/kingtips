@@ -129,15 +129,15 @@ echo "<div class='phablet'>";
     ?>
 <div class="single-bet--wrapper">
 
-    <div class="level single-bet columns vcentered has-text-white is-relative">
+    <div class="level single-bet columns is-multiline is-mobile vcentered has-text-white is-relative">
 
-        <div class="column is-3-desktop is-2-tablet fade">
+        <div class="column is-3-desktop is-4-tablet is-full-mobile fade">
             <div class="level-left is-flex-mobile truncate">
                 <?php extra_league_info(); ?>
             </div>
         </div>
 
-        <div class='column is-3-desktop is-4-tablet'>
+        <div class='column is-3-desktop is-8-tablet is-full-mobile teams'>
             <?php //Show the game time ?>
             <div class="level is-relative">
                 <!-- <div class='level-left'>
@@ -299,7 +299,7 @@ echo "<div class='phablet'>";
             </div>
         </div>
 
-        <div class='column is-3-desktop is-2-tablet'>
+        <div class='column is-3-desktop is-5-tablet is-full-mobile'>
             <div class="columns is-mobile">
                 <div class='column is-half'>
                     <?php //Add a bar for the tip tip ?>
@@ -351,7 +351,7 @@ echo "<div class='phablet'>";
             </div>
         </div>
 
-        <div class="column is-3-desktop is-4-tablet">
+        <div class="column is-3-desktop is-7-tablet is-full-mobile">
             <? //Add the bookies ?>
             <div class="level">
                 <div class='level-left is-flex-mobile'>
