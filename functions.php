@@ -1362,6 +1362,33 @@ function spa_league_info() {
 add_action( 'wpmu_before_content', 'spa_league_info' );
 
 /*****************************************************************************
+Canada League information
+*****************************************************************************/
+function can_league_info() { 
+		
+	//competitions
+	$can_comps = get_field('can_comp');
+	 $round = get_field('competition_round');
+	 $time = get_field('game_time');
+
+	?>
+	
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $can_comps ?>.png" width="30px" height="auto" alt="">
+		<div class="level-item is-block">
+			<div class="is-block has-text-weight-bold">
+				<?php echo $can_comps;?>
+			</div>
+			<div class="is-block has-text-grey">
+				<?php echo $time ?>
+			</div>
+		</div>
+	
+	<?php
+
+}
+add_action( 'wpmu_before_content', 'can_league_info' );
+
+/*****************************************************************************
 Brazil League information
 *****************************************************************************/
 function bra_league_info() { 
@@ -2052,129 +2079,135 @@ function extra_league_info() {
     $mex = get_field('mex');
     $dan = get_field('dan');
     $spa = get_field('spa');
-    $fra = get_field('fra');
+	$fra = get_field('fra');
+	
+	$europe = get_field('european');
 	
 	echo "<div class='level-item'>";
 	what_sport();
 	//only load this if footballis selected
 	if ($sport == 'Football') {
 		//Is this a european match
-		if (euro_info()) {
+		if ($europe !== 'Not a European fixture') { 
+		// if (euro_info()) {
 			euro_info();
-		} 
-		if ($country && in_array('England', $country)) {
-			if (count($eng) === 2) {
-				eng_league_info();
+		}  else {
+			if ($country && in_array('England', $country)) {
+				if (count($eng) === 2) {
+					eng_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Austrian', $country)) {
-			if (count($aus) === 2) {
-				aus_league_info();
+			if ($country && in_array('Austrian', $country)) {
+				if (count($aus) === 2) {
+					aus_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Brazil', $country)) {
-			if (count($bra) === 2) {
-				bra_league_info();
+			if ($country && in_array('Brazil', $country)) {
+				if (count($bra) === 2) {
+					bra_league_info();
+				};
 			};
-		};
-		// if (count($can) === 2) {
-		//     can_league_info();
-		// };
-		if ($country && in_array('Belgium', $country)) {
-			if (count($bel) === 2) {
-				bel_league_info();
+			if ($country && in_array('Canada', $country)) {
+				if (count($can) === 2) {
+					can_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Argentina', $country)) {
-			if (count($arg) === 2) {
-				arg_league_info();
+			if ($country && in_array('Belgium', $country)) {
+				if (count($bel) === 2) {
+					bel_league_info();
+				};
 			};
-		};
-		if ($country && in_array('China', $country)) {
-			if (count($chi) === 2) {
-				chi_league_info();
+			if ($country && in_array('Argentina', $country)) {
+				if (count($arg) === 2) {
+					arg_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Germany', $country)) {
-			if (count($ger) === 2) {
-				ger_league_info();
+			if ($country && in_array('China', $country)) {
+				if (count($chi) === 2) {
+					chi_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Holland', $country)) {
-			if (count($ned) === 2) {
-				ned_league_info();
+			if ($country && in_array('Germany', $country)) {
+				if (count($ger) === 2) {
+					ger_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Greece', $country)) {
-			if (count($gre) === 2) {
-				gre_league_info();
+			if ($country && in_array('Holland', $country)) {
+				if (count($ned) === 2) {
+					ned_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Japan', $country)) {
-			if (count($jap) === 2) {
-				jap_league_info();
+			if ($country && in_array('Greece', $country)) {
+				if (count($gre) === 2) {
+					gre_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Scotland', $country)) {
-			if (count($scot) === 2) {
-				scot_league_info();
+			if ($country && in_array('Japan', $country)) {
+				if (count($jap) === 2) {
+					jap_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Russia', $country)) {
-			if (count($rus) === 2) {
-				rus_league_info();
+			if ($country && in_array('Scotland', $country)) {
+				if (count($scot) === 2) {
+					scot_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Portugal', $country)) {
-			if (count($port) === 2) {
-				port_league_info();
+			if ($country && in_array('Russia', $country)) {
+				if (count($rus) === 2) {
+					rus_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Sweden', $country)) {
-			if (count($swed) === 2) {
-				swed_league_info();
+			if ($country && in_array('Portugal', $country)) {
+				if (count($port) === 2) {
+					port_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Swiss', $country)) {
-			if (count($swss) === 2) {
-				swss_league_info();
+			if ($country && in_array('Sweden', $country)) {
+				if (count($swed) === 2) {
+					swed_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Italy', $country)) {
-			if (count($ita) === 2) {
-				ita_league_info();
+			if ($country && in_array('Swiss', $country)) {
+				if (count($swss) === 2) {
+					swss_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Turkish', $country)) {
-			if (count($turk) === 2) {
-				turk_league_info();
+			if ($country && in_array('Italy', $country)) {
+				if (count($ita) === 2) {
+					ita_league_info();
+				};
 			};
-		};
-		if ($country && in_array('America', $country)) {
-			if (count($amr) === 2) {
-				amr_league_info();
+			if ($country && in_array('Turkish', $country)) {
+				if (count($turk) === 2) {
+					turk_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Mexico', $country)) {
-			if (count($mex) === 2) {
-				mex_league_info();
+			if ($country && in_array('America', $country)) {
+				if (count($amr) === 2) {
+					amr_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Danish', $country)) {
-			if (count($dan) === 2) {
-				dan_league_info();
+			if ($country && in_array('Mexico', $country)) {
+				if (count($mex) === 2) {
+					mex_league_info();
+				};
 			};
-		};
-		if ($country && in_array('Spain', $country)) {
-			if (count($spa) === 2) {
-				spa_league_info();
+			if ($country && in_array('Danish', $country)) {
+				if (count($dan) === 2) {
+					dan_league_info();
+				};
 			};
-		};
-		if ($country && in_array('France', $country)) {
-			if (count($fra) === 2) {
-				fra_league_info();
+			if ($country && in_array('Spain', $country)) {
+				if (count($spa) === 2) {
+					spa_league_info();
+				};
 			};
-		};
+			if ($country && in_array('France', $country)) {
+				if (count($fra) === 2) {
+					fra_league_info();
+				};
+			};
+		}
 	} else if ($sport == 'Hockey') { 
 		if ($hockey_league && in_array('NHL', $hockey_league)) {
 			if (count($nhl) === 2) {

@@ -24,10 +24,6 @@ $footer          = get_field('footer', 101);
 </div><!-- .site -->
 
 <?php wp_footer(); 
-
-echo "<pre>";
-print_r($footer);
-echo "</pre>";
 ?>
 
 </body>
