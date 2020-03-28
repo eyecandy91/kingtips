@@ -2104,6 +2104,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .team-badges {
     position: absolute;
+    height: 34px;
     right: 0;
     left: 0;
     top: 0;
