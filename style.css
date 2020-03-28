@@ -384,6 +384,7 @@ table th {
 
 .site {
     background: #1a1e23;
+    height: 100vh;
 }
 
 .has-text-centered {

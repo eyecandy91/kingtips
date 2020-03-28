@@ -16,8 +16,8 @@ $loop = new WP_Query(array(
         array(
             'taxonomy' => 'custom-bets',
             'field' => 'slug',
-            // 'terms' => 'coming',
-            'terms' => array('coming', 'active'),
+            'terms' => 'coming',
+            // 'terms' => 'coming', 'active'),
         ),
     ),
 
