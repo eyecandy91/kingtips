@@ -1130,10 +1130,10 @@ function esports_info() {
 	<div class="level-item">
 		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $game ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $game; ?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time; ?>
 			</div>
 		</div>
@@ -1160,10 +1160,10 @@ function euro_info() {
 	<div class="level-item">
 		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $europe ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $europe; ?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time; ?>
 			</div>
 		</div>
@@ -1187,10 +1187,10 @@ function eng_league_info() {
 	<div class="level-item">
 		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $eng_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $eng_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time; ?>
 			</div>
 		</div>
@@ -1213,10 +1213,10 @@ function bel_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $bel_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $bel_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time; ?>
 			</div>
 		</div>
@@ -1240,10 +1240,10 @@ function turk_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $turk_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $turk_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1267,10 +1267,10 @@ function rus_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $rus_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $rus_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1294,10 +1294,10 @@ function swss_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $swss_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $swss_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1321,10 +1321,10 @@ function arg_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $arg_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $arg_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1348,10 +1348,10 @@ function spa_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $spa_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $spa_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1375,10 +1375,10 @@ function can_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $can_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $can_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1402,10 +1402,10 @@ function bra_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $bra_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $bra_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1429,10 +1429,10 @@ function ned_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $ned_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $ned_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1456,10 +1456,10 @@ function ger_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $ger_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $ger_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1483,10 +1483,10 @@ function dan_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $dan_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $dan_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1510,10 +1510,10 @@ function amr_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $amr_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $amr_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1537,10 +1537,10 @@ function mex_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $mex_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $mex_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1564,10 +1564,10 @@ function scot_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $scot_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $scot_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1591,10 +1591,10 @@ function aus_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $aus_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $aus_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1618,10 +1618,10 @@ function chi_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $chi_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $chi_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1645,10 +1645,10 @@ function jap_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $jap_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $jap_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1661,21 +1661,21 @@ add_action( 'wpmu_before_content', 'jap_league_info' );
 /*****************************************************************************
 Sweden League information
 *****************************************************************************/
-function swe_league_info() { 
+function swed_league_info() { 
 		
 	//competitions
-	$swe_comps = get_field('swe_comp');
+	$swed_comps = get_field('swe_comp');
 	 $round = get_field('competition_round');
 	 $time = get_field('game_time');
 
 	?>
 	
-	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $swe_comps ?>.png" width="30px" height="auto" alt="">
+	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $swed_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
-				<?php echo $swe_comps;?>
+			<div class="is-block has-text-weight-bold title-color">
+				<?php echo $swed_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1683,7 +1683,7 @@ function swe_league_info() {
 	<?php
 
 }
-add_action( 'wpmu_before_content', 'swe_league_info' );
+add_action( 'wpmu_before_content', 'swed_league_info' );
 
 /*****************************************************************************
 Portugal League information
@@ -1699,10 +1699,10 @@ function port_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $port_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $port_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1726,10 +1726,10 @@ function gre_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $gre_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $gre_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1753,10 +1753,10 @@ function ita_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $ita_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $ita_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1780,10 +1780,10 @@ function fra_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $fra_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $fra_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1812,10 +1812,10 @@ function nhl_league_info() {
 	<div class="level-item">
 		<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $nhl_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $nhl_comps; ?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time; ?>
 			</div>
 		</div>
@@ -1838,10 +1838,10 @@ function khl_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $khl_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $khl_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1865,10 +1865,10 @@ function Eishockey_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $Eishockey_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $Eishockey_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1892,10 +1892,10 @@ function Eishockey2_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $Eishockey2_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $Eishockey2_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1923,10 +1923,10 @@ function nba_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $nba_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $nba_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1950,10 +1950,10 @@ function basketball_wc_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $basketball_wc_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $basketball_wc_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -1981,10 +1981,10 @@ function nfl_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $nfl_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $nfl_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -2012,10 +2012,10 @@ function mlb_league_info() {
 	
 	<img class="spacer" src="<?php echo get_template_directory_uri(); ?>/competition/<?php echo $mlb_comps ?>.png" width="30px" height="auto" alt="">
 		<div class="level-item is-block">
-			<div class="is-block has-text-weight-bold">
+			<div class="is-block has-text-weight-bold title-color">
 				<?php echo $mlb_comps;?>
 			</div>
-			<div class="is-block has-text-grey">
+			<div class="is-block has-text-grey subtitle-color">
 				<?php echo $time ?>
 			</div>
 		</div>
@@ -2068,7 +2068,7 @@ function extra_league_info() {
     $ned = get_field('ned');
     $gre = get_field('gre');
     $jap = get_field('jap');
-    $sco = get_field('scot');
+    $scot = get_field('scot');
     $rus = get_field('rus');
     $port = get_field('port');
     $swed = get_field('swed');

@@ -148,6 +148,87 @@ $google      = myprefix_get_theme_option('ga');
         </script>
         <script></script>
         <!-- here to ensure a non-blocking load still occurs in IE and Edge, even if scripts follow loadCSS in head -->
+        <style>
+        <?php 
+        //colors
+        $bg_color = get_field('background_color', 101);
+        $bet_color = get_field('bet_color', 101);
+        $teams = get_field('team_color', 101);
+        $titles = get_field('title_color', 101);
+        $subtitles = get_field('subtitle_color', 101);
+        $vs = get_field('vs_color', 101);
+        $bar_back = get_field('rating_background', 101);
+        $bar_fore = get_field('rating_foreground', 101);
+        $btn_color = get_field('btn_color', 101);
+        $btn_color_txt = get_field('btn_color_txt', 101);
+        ?>
+        <?php if ($bg_color) { ?>
+            .site {
+                background: <?php echo $bg_color?>
+            }
+        <?php } ?>
+
+        <?php if ($bet_color) { ?>
+            .single-bet--wrapper .single-bet {
+                background: <?php echo $bet_color?>
+            }
+            .single-bet--wrapper .fade:after {
+                background: linear-gradient(to right, rgba(255, 255, 255, 0), <?php echo $bet_color?> 50%)
+            }
+        <?php } ?>
+
+        <?php if ($teams) { ?>
+            .team-color {
+                color: <?php echo $teams?> !important
+            }
+        <?php } ?>
+
+        <?php if ($titles) { ?>
+            .title-color {
+                color: <?php echo $titles?> !important
+            }
+        <?php } ?>
+
+        <?php if ($subtitles) { ?>
+            .subtitle-color {
+                color: <?php echo $subtitles?> !important
+            }
+        <?php } ?>
+
+        <?php if ($vs) { ?>
+            .vs-color {
+                color: <?php echo $vs?> !important
+            }
+        <?php } ?>
+
+        <?php if ($bar_back) { ?>
+            .bar-background {
+                background: <?php echo $bar_back?> !important
+            }
+        <?php } ?>
+
+        <?php if ($bar_fore) { ?>
+            .bar-foreground {
+                background: <?php echo $bar_fore?> !important
+            }
+        <?php } ?>
+
+        <?php if ($btn_color) { ?>
+            .button--bookie {
+                background: <?php echo $btn_color?>;
+            }
+            .button--bookie:after {
+                border-color: transparent transparent <?php echo $btn_color?> transparent;
+            }
+        <?php } ?>
+
+        <?php if ($btn_color_txt) { ?>
+            .button--bookie,
+            .button--bookie:hover {
+                color: <?php echo $btn_color_txt?> !important
+            }
+        <?php } ?>
+        </style>
     </head>
 
     <body <?php body_class();?>>

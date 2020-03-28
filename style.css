@@ -1953,7 +1953,6 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .single-bet--wrapper .single-bet {
     background: #262c33;
-    border: 1px solid #262c33;
     padding: 1rem;
     margin-bottom: 1rem;
     overflow: hidden;
@@ -2104,6 +2103,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 .team-badges {
+    position: absolute;
     right: 0;
     left: 0;
     top: 0;
@@ -2165,6 +2165,11 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     right: 0;
     bottom: 0;
     background: #00d1b2;
+    color: white;
+}
+
+.button--bookie:hover {
+    color: white;
 }
 
 @media screen and (max-width: 768px) {

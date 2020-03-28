@@ -104,7 +104,7 @@ $loop = new WP_Query(array(
             <?php //Show the game time ?>
             <div class="level is-relative">
                 
-                <div class="level-item team-badges is-flex">
+                <div class="level-item team-badges is-flex team-color">
                 <?php if ($sport == 'Football') {
                     
                     if ($country && in_array('England', $country)) {
@@ -240,7 +240,7 @@ $loop = new WP_Query(array(
 
                 } ?>
 
-                    <div class="has-text-primary has-text-weight-bold">
+                    <div class="has-text-primary vs-color has-text-weight-bold">
                         vs
                     </div>
                 </div>
@@ -254,10 +254,10 @@ $loop = new WP_Query(array(
                     <div class="level tip">
                         <div class='level-left'>
                             <div class='level-item is-block'>
-                                <div class="is-block is-uppercase has-text-weight-bold">
+                                <div class="is-block is-uppercase has-text-weight-bold title-color">
                                     <?php echo $tip_text;?>
                                  </div>
-                                <div class="is-block has-text-grey">
+                                <div class="is-block has-text-grey subtitle-color">
                                     <?php if ($updpown == 'Under') { ?>
                                         <i class="has-text-danger fas fa-chevron-down"></i>
                                     <?php } else if ($updpown == 'Over') { ?>
@@ -277,16 +277,16 @@ $loop = new WP_Query(array(
                             <div class='level-item is-block-touch'>
                                 <?php //Add a bar for bet game rating ?>
                                 <div class="skill has-text-right-mobile">
-                                    <div class="is-uppercase has-text-weight-bold ratings">
+                                    <div class="is-uppercase has-text-weight-bold ratings title-color">
                                     <?php echo $rate_text; ?>
                                     </div>
                                     <div class="level-item is-flex-mobile">
-                                        <div class="has-text-grey">
+                                        <div class="has-text-grey subtitle-color">
                                             <?php echo $rating; ?>/10
                                         </div>
-                                        <div class="rating-bar">
+                                        <div class="rating-bar bar-background">
                                             <div class="rate-<?php echo $rating; ?>" style="width: <?php echo $rating; ?>0%">
-                                            <span class="animate blue"></span>
+                                            <span class="animate blue bar-foreground"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -303,14 +303,14 @@ $loop = new WP_Query(array(
                 <div class='level-left is-flex-mobile'>
                     <div class="level-left is-marginless bookies">
                         <img class="spacer--right" src="<?php echo get_template_directory_uri(); ?>/betting/<?php echo $bookies?>.png" width="45px" height="auto" alt="">
-                        <div class="is-block is-uppercase has-text-weight-bold">
+                        <div class="is-block is-uppercase has-text-weight-bold title-color">
                             <?php echo $bet_text; ?>
-                            <div class="is-block has-text-grey">
+                            <div class="is-block has-text-grey subtitle-color">
                                 <?php echo $odds; ?>
                             </div>
                         </div>
                     </div>
-                    <a class='is-uppercase has-text-weight-bold button--bookie has-text-white' href="<?php echo $url; ?>" target="_blank"><?php echo $btn; ?></a>
+                    <a class='is-uppercase has-text-weight-bold button--bookie' href="<?php echo $url; ?>" target="_blank"><?php echo $btn; ?></a>
                 </div>
             </div>
         </div>
