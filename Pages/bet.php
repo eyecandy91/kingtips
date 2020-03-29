@@ -240,7 +240,7 @@ $loop = new WP_Query(array(
 
                 } ?>
 
-                    <div class="has-text-primary vs-color has-text-weight-bold">
+                    <div class="has-text-grey has-text-weight-bold">
                         vs
                     </div>
                 </div>
@@ -257,7 +257,7 @@ $loop = new WP_Query(array(
                                 <div class="is-block is-uppercase has-text-weight-bold title-color">
                                     <?php echo $tip_text;?>
                                  </div>
-                                <div class="is-block has-text-grey subtitle-color">
+                                <div class="is-block has-text-primary vs-color has-text-weight-bold">
                                     <?php if ($updpown == 'Under') { ?>
                                         <i class="has-text-danger fas fa-chevron-down"></i>
                                     <?php } else if ($updpown == 'Over') { ?>
