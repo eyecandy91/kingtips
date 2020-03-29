@@ -14,11 +14,11 @@ get_header();
 
     <div class="error content">
         <div class="error__wrapper">
-            <h1>Error 404</h1>
-            <h3><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h3>
-            <p class="is-marginless"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the navigation links', 'oil-baron' ); ?></p>
-			<h2 class="spacer">OR</h2>
-			<? echo "<a class='is-link button' href=\"javascript:history.go(-1)\">go back</a>";  ?>
+            <h1 class="has-text-white title-color">Error 404</h1>
+            <h3 class="has-text-white title-color"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h3>
+            <p class="has-text-white is-marginless subtitle-color"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the navigation links', 'oil-baron' ); ?></p>
+			<h2 class="spacer has-text-white vs-color ">OR</h2>
+			<? echo "<a class='button site-button is-medium' href=\"javascript:history.go(-1)\">go back</a>";  ?>
         </div>
     </div>
 

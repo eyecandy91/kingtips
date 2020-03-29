@@ -105,6 +105,15 @@
     background-color: rgba(10, 10, 10, 0.4);
 }
 
+.is-medium.delete {
+    height: 24px;
+    max-height: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    width: 24px;
+}
+
 .loader {
     animation: spinAround 500ms infinite linear;
     border: 2px solid #dbdbdb;
@@ -505,7 +514,7 @@ a.box:active {
     color: inherit;
 }
 
-.button .icon {
+.button .icon, .button .icon.is-medium {
     height: 1.5em;
     width: 1.5em;
 }
@@ -576,6 +585,10 @@ a.box:active {
     background-color: #3273dc;
     border-color: transparent;
     box-shadow: none;
+}
+
+.button.is-medium {
+    font-size: 1.25rem;
 }
 
 .button[disabled],
@@ -800,12 +813,21 @@ a.box:active {
     margin-top: 0;
 }
 
+.content.is-medium {
+    font-size: 1.25rem;
+}
+
 .icon {
     align-items: center;
     display: inline-flex;
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+.icon.is-medium {
+    height: 2rem;
+    width: 2rem;
 }
 
 .image {
@@ -882,6 +904,10 @@ a.box:active {
 
 .progress:indeterminate::-moz-progress-bar {
     background-color: transparent;
+}
+
+.progress.is-medium {
+    height: 1.25rem;
 }
 
 @keyframes moveIndeterminate {
@@ -997,6 +1023,10 @@ a.box:active {
 .tag:not(body).is-link {
     background-color: #3273dc;
     color: #fff;
+}
+
+.tag:not(body).is-medium {
+    font-size: 1rem;
 }
 
 .tag:not(body) .icon:first-child:not(:last-child) {
@@ -1218,6 +1248,10 @@ a.tag:hover {
     font-size: 1rem;
 }
 
+.menu.is-medium {
+    font-size: 1.25rem;
+}
+
 .message {
     background-color: whitesmoke;
     border-radius: 4px;
@@ -1231,6 +1265,10 @@ a.tag:hover {
 .message a:not(.button):not(.tag):not(.dropdown-item) {
     color: currentColor;
     text-decoration: underline;
+}
+
+.message.is-medium {
+    font-size: 1.25rem;
 }
 
 .message.is-link {
@@ -1500,6 +1538,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     margin: -0.25rem;
 }
 
+.pagination.is-medium {
+    font-size: 1.25rem;
+}
+
 .pagination {
     align-items: center;
     display: flex;
@@ -1582,6 +1624,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .tabs .icon:last-child {
     margin-left: 0.5em;
+}
+
+.tabs.is-medium {
+    font-size: 1.25rem;
 }
 
 .input, .textarea, .select select {
@@ -1675,6 +1721,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .is-link.input:focus, .is-link.textarea:focus, .is-link.input:active, .is-link.textarea:active, .is-link.is-active.input, .is-link.is-active.textarea {
     box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+.is-medium.input, .is-medium.textarea {
+    font-size: 1.25rem;
 }
 
 .textarea {
@@ -1787,11 +1837,19 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
 }
 
+.select.is-medium {
+    font-size: 1.25rem;
+}
+
 .file {
     align-items: stretch;
     display: flex;
     justify-content: flex-start;
     position: relative;
+}
+
+.file.is-medium {
+    font-size: 1.25rem;
 }
 
 .file-icon {
@@ -1812,6 +1870,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 
 .label:not(:last-child) {
     margin-bottom: 0.5em;
+}
+
+.label.is-medium {
+    font-size: 1.25rem;
 }
 
 .help {
@@ -1845,6 +1907,11 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
         flex-shrink: 0;
         margin-right: 1.5rem;
         text-align: right;
+    }
+
+    .field-label.is-medium {
+        font-size: 1.25rem;
+        padding-top: 0.375em;
     }
 }
 
@@ -2263,8 +2330,47 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     }
 }
 
+.error {
+    display: table;
+    width: 100%;
+    min-height: 250px;
+    text-align: center;
+}
+
+.error .spacer {
+    margin: 1rem 0 !important;
+}
+
+.error__wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.error__wrapper h1 {
+    font-size: 50px;
+    display: inline-block;
+    padding-right: 12px;
+    animation: type .5s alternate infinite;
+}
+
+@keyframes type {
+    from {
+        box-shadow: inset -3px 0px 0px #888;
+    }
+
+    to {
+        box-shadow: inset -3px 0px 0px transparent;
+    }
+}
+
 .section {
     padding: 3rem 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .section.is-medium {
+        padding: 9rem 1.5rem;
+    }
 }
 
 .footer {

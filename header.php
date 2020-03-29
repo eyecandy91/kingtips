@@ -214,6 +214,7 @@ $google      = myprefix_get_theme_option('ga');
         <?php } ?>
 
         <?php if ($btn_color) { ?>
+            .site-button,
             .button--bookie {
                 background: <?php echo $btn_color?>;
             }
@@ -223,6 +224,7 @@ $google      = myprefix_get_theme_option('ga');
         <?php } ?>
 
         <?php if ($btn_color_txt) { ?>
+            .site-button,
             .button--bookie,
             .button--bookie:hover {
                 color: <?php echo $btn_color_txt?> !important
